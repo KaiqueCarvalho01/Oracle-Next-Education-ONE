@@ -1,11 +1,26 @@
-//1 Pergunte ao usuário qual é o dia da semana. Se a resposta for "Sábado" ou "Domingo", mostre "Bom fim de semana!". Caso contrário, mostre "Boa semana!".
-let diaSemana = prompt("Qual é o dia da semana? ");
-if (diaSemana == "Sábado" || diaSemana == "Domingo") {
-  alert("Bom fim de semana!");
-} else {
-  alert("Boa semana!");
-}
+alert("Boas vindas ao jogo do número secreto");
+let numeroSecreto = 5;
+let chute;
+let tentativas;
 
-//2 vPeça ao usuário para inserir seu nome usando prompt. Em seguida, mostre um alerta de boas-vindas usando esse nome
-let nomeUsuario = prompt("Qual é o seu nome? ");
-alert("Bem-Vindo(a), " + nomeUsuario);
+//Enquanto chute não for ingual ao n.s.
+while (chute != numeroSecreto) {
+  chute = prompt("Escolha um numero entre 1 e 10");
+  //Se chute for igual ao número secreto
+  if (chute == numeroSecreto) {
+    alert(
+      "Isso aí! Você descobriu o número secreto" +
+        numeroSecreto +
+        "com " +
+        tentativas +
+        " tentativas."
+    );
+  } else {
+    if (chute > numeroSecreto) {
+      alert("O número secreto é menor que " + chute);
+    } else {
+      alert("O número secreto é maior que " + chute);
+    }
+    tentativas++;
+  }
+}
